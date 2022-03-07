@@ -1,4 +1,4 @@
-import http from "../http-common"
+import http from "../http-common";
 
 class RestaurantDataService {
   getAll(page = 0) {
@@ -6,7 +6,7 @@ class RestaurantDataService {
   }
 
   get(id) {
-    return http.get(`/restaurant?id=${id}`);
+    return http.get(`/restaurants/id/${id}`);
   }
 
   find(query, by = "name", page = 0) {
@@ -22,7 +22,7 @@ class RestaurantDataService {
   }
 
   deleteReview(id, userId) {
-    return http.delete(`/review-delete?id=${id}`, {data:{user_id: userId}});
+    return http.delete(`/review?id=${id}`, {data:{user_id: userId}});
   }
 
   getCuisines(id) {
